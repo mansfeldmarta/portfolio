@@ -18,8 +18,8 @@ const portfolioItems = [
   {
     id: 'site',
     title: 'Portfolio website',
-    href: 'https://github.com/martam802/mmansfeld',
-    tech: 'React, TailwindCSS, Figma',
+    href: 'https://github.com/mansfeldmarta/portfolio',
+    tech: ['React', 'TailwindCSS'],
     short: 'Personal website & portfolio showcasing projects.',
     long: 'A responsive personal portfolio built with React and TailwindCSS. Designed to highlight projects with a clean layout, and accessible components.',
     image: '/images/port.png',
@@ -29,7 +29,7 @@ const portfolioItems = [
     id: 'perf',
     title: 'Performance dashboard',
     href: '',
-    tech: 'Trello API, React, Chart.js',
+    tech: ['JavaScript', 'React', 'Chart.js', 'Trello API'],
     short: 'Dashboard for tracking board/task performance and KPIs.',
     description:
       'A performance dashboard built to track and analyze team productivity by integrating directly with Trello boards via API. Data is pulled on a schedule, processed to calculate expected vs. actual hours, and visualized to give managers actionable insights across teams and individuals.',
@@ -45,16 +45,16 @@ const portfolioItems = [
     ],
     long: 'A performance dashboard built to track and analyze team productivity by integrating directly with Trello boards via API. Each team has its own board, with data automatically pulled every 6 hours through a scheduled cron job. The system processes card and board activity, applies calculations for expected vs. actual hours, and accounts for holidays and bank holidays to provide accurate productivity insights. Data is visualized with multiple Chart.js graphs, including weekly and daily breakdowns at both team and individual levels. The UI, built with React, delivers an intuitive and responsive experience. This tool has become a core part of measuring workload, tracking performance trends, and improving transparency across the organization.',
     image: '/images/trello.jpeg',
-    preview: ['/images/Trello1.png', '/images/Trello2.png'],
+    preview: [],
   },
   {
     id: 'builder',
     title: 'Form Builder',
     href: '',
-    tech: 'React, DnD',
+    tech: ['JavaScript', 'React', 'DnD'],
     short: 'Internal Form Builder for creating custom forms.',
     description:
-      'The Editor View is a graphical interface designed for building and customizing dynamic layouts through an intuitive drag-and-drop experience. Started with React and Apollo Client before switching to tRPC, it integrates with queries to fetch and manage data while providing a user-friendly canvas for arranging components. The editor supports advanced interactions — duplicating, removing, and repositioning elements — making it accessible to both technical and non-technical users.',
+      'The Form Builder is a graphical interface designed for building and customizing dynamic layouts through an intuitive drag-and-drop experience. Started with React and Apollo Client before switching to tRPC, it integrates with queries to fetch and manage data while providing a user-friendly canvas for arranging components. The editor supports advanced interactions — duplicating, removing, and repositioning elements — making it accessible to both technical and non-technical users.',
     features: [
       'Drag-and-drop layout building: move, position and organize components across different zones.',
       'Component lifecycle actions: remove, duplicate, or reassign items while keeping layout and component state in sync.',
@@ -62,13 +62,13 @@ const portfolioItems = [
       'State synchronization: all layout changes are reflected in both layout and components states for consistency and reusability.',
     ],
     image: '/images/builder.png',
-    preview: ['/images/builder1.png', '/images/builder2.png'],
+    preview: [],
   },
   {
     id: 'viz',
     title: 'Data visualization',
     href: '#',
-    tech: 'React, Nivo Charts',
+    tech: ['JavaScript', 'React', 'Nivo.js'],
     short: 'Exploratory analyses and production-ready visualisations.',
     description:
       'A set of data visualisations and reporting tools built with React and Nivo Charts. Heavy numerical work (aggregations and forecasts) is performed on the backend to keep the UI fast and responsive, while the frontend focuses on interactive exploration and exporting snapshots for stakeholders.',
@@ -84,16 +84,16 @@ const portfolioItems = [
     ],
     long: 'A collection of visualisations and dashboards built with React and Nivo Charts. Processing-heavy work is handled on the backend to ensure the UI remains snappy even with large datasets. The product supports interactive exploration, exports, scheduled snapshots and a range of report templates (Sales, Marketing, Product, Operations). Dashboards are responsive and include features for sharing and downloading data for downstream analysis.',
     image: '/images/reports.png',
-    preview: ['/images/reports1.png'],
+    preview: [],
   },
   {
     id: 'crmtool',
     title: 'Campaigns Draft System',
     href: '#',
-    tech: 'React ts',
+    tech: ['JavaScript', 'TypeScript', 'React'],
     short: 'A web tool for streamlined PPC draft reviews and approvals.',
     description:
-      'Built an internal Draft Review & Approval system integrated into the Customer Hub to centralize PPC campaign feedback. The system allows teams to upload campaign drafts, assign reviewers, and collect customer approvals or revision requests—all in one clean, responsive interface. Notifications and status tracking reduce delays, improve transparency, and streamline communication between teams and clients.',
+      'Built an internal Draft Review & Approval system integrated into the Customer Portal to centralize PPC campaign feedback. The system allows teams to upload campaign drafts, assign reviewers, and collect customer approvals or revision requests—all in one clean, responsive interface. Notifications and status tracking reduce delays, improve transparency, and streamline communication between teams and clients.',
     features: [
       'Upload & manage campaign drafts with associated media assets',
       'Assign internal reviewers and track approvals before sending to clients',
@@ -104,56 +104,54 @@ const portfolioItems = [
       'Role-based access control for secure, permissioned access',
       'Centralized dashboard for reporting and monitoring campaign review progress',
     ],
-    long: 'This system solves fragmented communication and delays in PPC campaign approvals by centralizing draft management and feedback in the Customer Hub. Built with React and Node.js, it provides a responsive, intuitive UI, real-time status tracking, version history, and notifications for internal teams and customers. Integrated Nivo Charts provide visual dashboards for tracking approvals and campaign progress, enabling faster turnarounds and better client satisfaction.',
-    image: '/images/crmtool.png',
-    preview: ['/images/crmtool1.png', '/images/crmtool2.png'],
+    long: 'This feature solves fragmented communication and delays in PPC campaign approvals by centralizing draft management and feedback in the Customer Portal. Built with React, it provides a responsive, intuitive UI, real-time status tracking, version history, and notifications for internal teams and customers. Integrated Nivo Charts provide visual dashboards for tracking approvals and campaign progress, enabling faster turnarounds.',
+    image: '/images/ppc.png',
+    preview: [],
   },
 ];
 
 const collaborationItems = [
   {
     id: 'sunday',
-    title: 'CRM tool',
+    title: 'CRM Tool',
     href: '#',
-    tech: 'React, Nivo Charts, Node.js',
-    short: 'Exploratory analyses and production-ready visualisations.',
+    tech: ['JavaScript', 'TypeScript', 'React', 'Virtuoso', 'TPS API'],
+    short: 'Internal tool for managing leads and customer data efficiently.',
     description:
-      'A set of data visualisations and reporting tools built with React and Nivo Charts. Heavy numerical work (aggregations and forecasts) is performed on the backend to keep the UI fast and responsive, while the frontend focuses on interactive exploration and exporting snapshots for stakeholders.',
+      'Built a custom CRM and leads management system within TurtleShell to replace external tools like Monday.com. The system replicates key project and workflow functionalities—tracking leads, custom fields, views, and statuses—while centralizing all lead information in-house. This eliminates manual data transfers, reduces operational costs, and provides sales reps with a faster, more organized workflow.',
     features: [
-      'Nivo-powered interactive charts: rich, animated visualisations (line, bar, heatmap, pie charts) with zoom, brush and hover interactions.',
-      'Backend aggregation & calculation: server-side pre-computed metrics to improve performance for large datasets.',
-      'Responsive design: dashboards adapt to desktop, tablet and mobile while preserving readability and interactions.',
-      'Snapshot & share: capture dashboard snapshots (PNG/PDF) for presentations and archival.',
-      'Download & export: CSV and Excel exports of underlying data and chart-specific downloads for ad-hoc analysis.',
-      'Caching & pagination: smart caching and paginated queries to keep load times low on big datasets.',
-      'Drill-down & filters: interactive filtering, segmentation and drill-downs from aggregate KPIs to row-level details.',
-      'Automated reporting: scheduled jobs that email or store PDF/CSV reports for stakeholders.',
+      'Full lead lifecycle management: create, track, and update leads within TurtleShell',
+      'Custom project-like boards: configure fields, views, and workflows similar to Monday.com / GitHub ProjectsV2',
+      'Dynamic field types: text, single-select, date, labels, assignees, and more',
+      'Custom views & filtering: board, table, entries',
+      'Comments & version history: track interactions and updates for each lead',
+      'Role-based permissions: secure access for sales reps and managers',
+      'Backend-optimized data handling: server-side calculations, pagination, and caching for fast performance',
+      'Export & reporting: CSV / Excel exports of lead data and activity for analysis',
     ],
-    long: 'A collection of visualisations and dashboards built with React and Nivo Charts. Processing-heavy work is handled on the backend to ensure the UI remains snappy even with large datasets. The product supports interactive exploration, exports, scheduled snapshots and a range of report templates (Sales, Marketing, Product, Operations). Dashboards are responsive and include features for sharing and downloading data for downstream analysis.',
-    image: '',
-    preview: [''],
+    long: 'This tool was developed to replace Monday.com for managing leads, eliminating external subscription costs and centralizing all customer and lead data. Inspired by GitHub ProjectsV2 and Monday.com, it allows sales teams to create projects with custom fields and workflows, configure multiple views (board, table, roadmap), and track lead progress efficiently. Comments and version history maintain full transparency, while the responsive UI and backend optimizations ensure fast, interactive experiences. The platform also supports exporting and reporting features to aid management and data-driven decision making.',
+    image: '/images/crm.png',
+    preview: [],
   },
   {
     id: 'portal',
     title: 'Customer Portal',
     href: '#',
-    tech: 'React, Nivo Charts, Node.js',
-    short: 'Exploratory analyses and production-ready visualisations.',
+    tech: ['JavaScript', 'TypeScript', 'React', 'AWS S3'],
+    short: 'Customer-facing portal to track orders and upload assets.',
     description:
-      'A set of data visualisations and reporting tools built with React and Nivo Charts. Heavy numerical work (aggregations and forecasts) is performed on the backend to keep the UI fast and responsive, while the frontend focuses on interactive exploration and exporting snapshots for stakeholders.',
+      'The Customer Hub was designed to empower customers to manage requests and assets directly. Using email-based authentication, customers can log in without passwords. Assets uploaded by customers are stored in AWS S3. The backend, built with Node.js and Prisma, manages asset references, lifecycle, and integration with main system. A visual product pipeline allows customers to track their orders step by step. The system improves customer experience, streamlines internal workflows, and ensures secure and organized asset management.',
     features: [
-      'Nivo-powered interactive charts: rich, animated visualisations (line, bar, heatmap, pie charts) with zoom, brush and hover interactions.',
-      'Backend aggregation & calculation: server-side pre-computed metrics to improve performance for large datasets.',
-      'Responsive design: dashboards adapt to desktop, tablet and mobile while preserving readability and interactions.',
-      'Snapshot & share: capture dashboard snapshots (PNG/PDF) for presentations and archival.',
-      'Download & export: CSV and Excel exports of underlying data and chart-specific downloads for ad-hoc analysis.',
-      'Caching & pagination: smart caching and paginated queries to keep load times low on big datasets.',
-      'Drill-down & filters: interactive filtering, segmentation and drill-downs from aggregate KPIs to row-level details.',
-      'Automated reporting: scheduled jobs that email or store PDF/CSV reports for stakeholders.',
+      'Email-based token authentication: Customers log in via a secure, time-limited link without managing passwords.',
+      'Product delivery pipeline: Visual timeline to track order progress.',
+      'Asset uploading: Customers can upload assets (images, logos, files) to AWS S3, linked to their account for designers/content teams.',
+      'Asset lifecycle management: Automatic expiration/deletion of files to optimize storage costs.',
+      'Integration with main system backend.',
+      'Responsive frontend UI built with React and TypeScript.',
     ],
-    long: 'A collection of visualisations and dashboards built with React and Nivo Charts. Processing-heavy work is handled on the backend to ensure the UI remains snappy even with large datasets. The product supports interactive exploration, exports, scheduled snapshots and a range of report templates (Sales, Marketing, Product, Operations). Dashboards are responsive and include features for sharing and downloading data for downstream analysis.',
-    image: '',
-    preview: [''],
+    long: 'The Customer Hub was designed to empower customers to manage requests and assets directly. Using email-based authentication, customers can log in without passwords. Assets uploaded by customers are stored in AWS S3. The backend, built with Node.js and Prisma, manages asset references, lifecycle, and integration with main system. A visual product pipeline allows customers to track their orders step by step. The system improves customer experience, streamlines internal workflows, and ensures secure and organized asset management.',
+    image: '/images/ch.png',
+    preview: [],
   },
 ];
 
@@ -164,6 +162,10 @@ export default function App() {
   const [expandedImg, setExpandedImg] = useState(null);
   const [expandedIdx, setExpandedIdx] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [statsModalOpen, setStatsModalOpen] = useState(false);
+  const [activeYear, setActiveYear] = useState('2025');
+  const [previewImg, setPreviewImg] = useState(null);
+  const years = ['2025', '2024', '2023', '2022'];
   const [selected, setSelected] = useState(null);
 
   useEffect(() => {
@@ -408,6 +410,12 @@ export default function App() {
                 below.
               </p>
             </div>
+            {/* <div>
+              Frontend: React TailwindCSS Figma DnD (Drag and Drop) Backend /
+              API: Node.js tRPC Apollo Client TPS API Trello API Languages:
+              JavaScript TypeScript Data Visualization / Charts: Chart.js
+              Nivo.js / Nivo Charts UI / Performance Tools: Virtuoso
+            </div> */}
 
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center'>
               {portfolioItems.map((it) => (
@@ -419,9 +427,16 @@ export default function App() {
                   <div className='rounded-lg p-4'>
                     <h4 className='text-lg font-semibold mb-2'>{it.title}</h4>
                     <p className='text-sm text-gray-700'>{it.short}</p>
-                    <p className='mt-3 text-xs text-gray-600'>
-                      Tech: {it.tech}
-                    </p>
+                    <div className='mt-4 flex flex-wrap gap-2'>
+                      {it.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className='bg-indigo-100 text-indigo-800 text-xs font-medium px-3 py-1 rounded-full'
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </button>
               ))}
@@ -446,9 +461,16 @@ export default function App() {
                   <div className='rounded-lg p-4'>
                     <h4 className='text-lg font-semibold mb-2'>{it.title}</h4>
                     <p className='text-sm text-gray-700'>{it.short}</p>
-                    <p className='mt-3 text-xs text-gray-600'>
-                      Tech: {it.tech}
-                    </p>
+                    <div className='mt-4 flex flex-wrap gap-2'>
+                      {it.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className='bg-indigo-100 text-indigo-800 text-xs font-medium px-3 py-1 rounded-full'
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </button>
               ))}
@@ -458,53 +480,130 @@ export default function App() {
 
         <section id='contact' className='py-16 bg-gray-50'>
           <div className='max-w-6xl mx-auto px-6'>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-              <div className='p-6 bg-white rounded-xl shadow'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6 items-center'>
+              {/* Email */}
+              <div className='w-full p-5 bg-white rounded-xl shadow text-center'>
                 <h3 className='font-semibold'>Email</h3>
                 <p className='mt-2 text-gray-700'>mansfeldmarta@gmail.com</p>
               </div>
-              <div className='p-6 bg-white rounded-xl shadow flex items-center'>
-                <div className='flex gap-4'>
+
+              <div className='p-6 bg-white rounded-xl shadow flex flex-row items-center justify-center gap-8 overflow-x-auto'>
+                <div className='flex gap-8 flex-shrink-0'>
+                  {/* GitHub */}
                   <a
-                    href='https://github.com/martam802'
+                    href='https://github.com/mansfeldmarta'
                     target='_blank'
                     rel='noreferrer'
                     aria-label='GitHub'
+                    className='transform hover:scale-110 transition'
                   >
                     <img
-                      src='/assets/icons/git.png'
+                      src='/images/gh.png'
                       alt='github'
-                      className='h-10 w-10 object-contain'
+                      className='h-12 w-12 object-contain'
                     />
                   </a>
-                  <a
-                    href='https://www.instagram.com/martam802/'
-                    target='_blank'
-                    rel='noreferrer'
-                    aria-label='Instagram'
-                  >
-                    <img
-                      src='/assets/icons/insta.png'
-                      alt='instagram'
-                      className='h-10 w-10 object-contain'
-                    />
-                  </a>
+
+                  {/* LinkedIn */}
                   <a
                     href='https://www.linkedin.com/in/marta-mansfeld-a13a2817a/'
                     target='_blank'
                     rel='noreferrer'
                     aria-label='LinkedIn'
+                    className='transform hover:scale-110 transition'
                   >
                     <img
-                      src='/assets/icons/in.png'
+                      src='/images/in.png'
                       alt='linkedin'
-                      className='h-10 w-10 object-contain'
+                      className='h-12 w-12 object-contain'
                     />
                   </a>
                 </div>
+
+                {/* Stats */}
+                <button
+                  onClick={() => setStatsModalOpen(true)}
+                  className='transform hover:scale-110 transition flex-shrink-0'
+                >
+                  <img
+                    src='/images/stats.png'
+                    alt='GitHub stats'
+                    className='h-12 w-12 object-contain'
+                  />
+                </button>
               </div>
             </div>
           </div>
+
+          {/* Stats Modal */}
+          <Modal
+            isShowing={statsModalOpen}
+            hide={() => setStatsModalOpen(false)}
+            width={900}
+          >
+            <div className='p-4'>
+              <h3 className='text-xl font-semibold mb-4'>GitHub Stats</h3>
+
+              {/* Year Tabs */}
+              <div className='flex flex-wrap gap-2 mb-6 border-b overflow-x-auto'>
+                {years.map((year) => (
+                  <button
+                    key={year}
+                    onClick={() => setActiveYear(year)}
+                    className={`px-4 py-2 font-medium border-b-2 flex-shrink-0 ${
+                      activeYear === year
+                        ? 'border-indigo-600 text-indigo-600'
+                        : 'border-transparent text-gray-600 hover:text-indigo-600'
+                    }`}
+                  >
+                    {year}
+                  </button>
+                ))}
+              </div>
+
+              {/* Contributions & Commits */}
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                {['con', 'com'].map((type) => (
+                  <div
+                    key={type}
+                    className='bg-gray-900 rounded-lg p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition'
+                    onClick={() =>
+                      setPreviewImg(`/images/${type}${activeYear}.png`)
+                    }
+                  >
+                    <h4 className='text-white font-medium mb-2'>
+                      {type === 'con' ? 'Contributions' : 'Commits'}
+                    </h4>
+                    <img
+                      src={`/images/${type}${activeYear}.png`}
+                      alt={`/images/${type} ${activeYear}`}
+                      className='max-h-96 object-contain'
+                    />
+                    <p className='mt-2 text-gray-300 text-sm'>
+                      Click to preview
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Modal>
+
+          {/* Fullscreen Preview Modal */}
+          <Modal
+            isShowing={!!previewImg}
+            hide={() => setPreviewImg(null)}
+            width={'90%'} // optional, can be 'max-w-xl' etc.
+          >
+            {previewImg && (
+              <div className='flex justify-center items-center p-4'>
+                <img
+                  src={previewImg}
+                  alt='Preview'
+                  className='max-w-full max-h-[80vh] object-contain rounded-md shadow-lg'
+                />
+              </div>
+            )}
+          </Modal>
         </section>
 
         <footer className='py-8 text-center text-sm text-gray-600'>
@@ -528,9 +627,6 @@ export default function App() {
 
               <div>
                 <h3 className='text-xl font-semibold'>{selected.title}</h3>
-                <p className='text-sm text-gray-600 mt-1'>
-                  Tech: {selected.tech}
-                </p>
               </div>
             </div>
 
@@ -554,7 +650,7 @@ export default function App() {
               </div>
             )}
 
-            <div>
+            {/* <div>
               {selected && selected.preview && selected.preview.length > 0 && (
                 <>
                   <h4 className='font-medium mb-2'>Project previews:</h4>
@@ -578,7 +674,7 @@ export default function App() {
                     ))}
                   </div>
 
-                  {expandedImg && (
+                   {expandedImg && (
                     <div
                       className='fixed inset-0 z-60 flex items-center justify-center bg-black/80'
                       onClick={() => setExpandedImg(null)}
@@ -652,7 +748,7 @@ export default function App() {
                   )}
                 </>
               )}
-            </div>
+            </div> */}
 
             <div className='flex items-center gap-3'>
               {selected.href && selected.href !== '#' && (

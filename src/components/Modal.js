@@ -27,7 +27,8 @@ export default function Modal({ isShowing, hide, children }) {
 
       {/* Modal box */}
       <div
-        className='relative bg-white rounded-xl shadow-lg z-10 w-full max-w-full sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl max-h-[90vh] overflow-auto p-4 sm:p-6'
+        className='relative bg-white rounded-xl shadow-lg z-10 w-full max-w-full sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl
+             max-h-[90vh] overflow-auto p-4 sm:p-6'
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
