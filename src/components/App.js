@@ -569,7 +569,7 @@ export default function App() {
                     className='bg-gray-900 rounded-lg p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition'
                     onClick={() =>
                       setPreviewImg(
-                        `process.env.PUBLIC_URL + /images/${type}${activeYear}.png`
+                        `${process.env.PUBLIC_URL}/images/${type}${activeYear}.png`
                       )
                     }
                   >
@@ -654,106 +654,6 @@ export default function App() {
                 <ReactMarkdown>{dedent(selected.long || '')}</ReactMarkdown>
               </div>
             )}
-
-            {/* <div>
-              {selected && selected.preview && selected.preview.length > 0 && (
-                <>
-                  <h4 className='font-medium mb-2'>Project previews:</h4>
-                  <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-                    {selected.preview.map((src, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => {
-                          setExpandedImg(src);
-                          setExpandedIdx(idx);
-                        }}
-                        className='block w-full h-40 overflow-hidden rounded-md focus:outline-none'
-                        aria-label={`${selected.title} preview ${idx + 1}`}
-                      >
-                        <img
-                          src={src}
-                          alt={`${selected.title} preview ${idx + 1}`}
-                          className='w-full h-40 object-cover rounded-md transform hover:scale-105 transition'
-                        />
-                      </button>
-                    ))}
-                  </div>
-
-                   {expandedImg && (
-                    <div
-                      className='fixed inset-0 z-60 flex items-center justify-center bg-black/80'
-                      onClick={() => setExpandedImg(null)}
-                      role='dialog'
-                      aria-modal='true'
-                    >
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          if (!selected || !selected.preview) return;
-                          const prev =
-                            (expandedIdx - 1 + selected.preview.length) %
-                            selected.preview.length;
-                          setExpandedIdx(prev);
-                          setExpandedImg(selected.preview[prev]);
-                        }}
-                        className='absolute left-4 hidden md:inline-flex items-center justify-center h-12 w-12 rounded-full bg-white/10 hover:bg-white/20 text-white'
-                        aria-label='Previous image'
-                      >
-                        ‹
-                      </button>
-
-                      <div
-                        className='max-w-[95vw] max-h-[90vh] p-2'
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <img
-                          src={expandedImg}
-                          alt={`${selected.title} enlarged`}
-                          className='max-w-full max-h-[90vh] rounded-md shadow-lg object-contain'
-                        />
-                        <div className='mt-3 flex items-center justify-between text-sm text-white/90'>
-                          <div>{`${expandedIdx + 1} / ${
-                            selected.preview.length
-                          }`}</div>
-
-                          <div className='flex gap-2'>
-                            <a
-                              href={expandedImg}
-                              target='_blank'
-                              rel='noreferrer'
-                              className='px-3 py-1 border rounded bg-white/10 hover:bg-white/20'
-                            >
-                              Open in new tab
-                            </a>
-                            <button
-                              onClick={() => setExpandedImg(null)}
-                              className='px-3 py-1 border rounded bg-white/10 hover:bg-white/20'
-                            >
-                              Close
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          if (!selected || !selected.preview) return;
-                          const next =
-                            (expandedIdx + 1) % selected.preview.length;
-                          setExpandedIdx(next);
-                          setExpandedImg(selected.preview[next]);
-                        }}
-                        className='absolute right-4 hidden md:inline-flex items-center justify-center h-12 w-12 rounded-full bg-white/10 hover:bg-white/20 text-white'
-                        aria-label='Next image'
-                      >
-                        ›
-                      </button>
-                    </div>
-                  )}
-                </>
-              )}
-            </div> */}
 
             <div className='flex items-center gap-3'>
               {selected.href && selected.href !== '#' && (
