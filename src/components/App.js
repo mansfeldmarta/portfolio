@@ -22,7 +22,7 @@ const portfolioItems = [
     tech: ['React', 'TailwindCSS'],
     short: 'Personal website & portfolio showcasing projects.',
     long: 'A responsive personal portfolio built with React and TailwindCSS. Designed to highlight projects with a clean layout, and accessible components.',
-    image: '/images/port.png',
+    image: process.env.PUBLIC_URL + '/images/port.png',
     preview: [],
   },
   {
@@ -44,7 +44,7 @@ const portfolioItems = [
       'Export & reporting: CSV export of reports and PDF-ready snapshot views for stakeholder updates.',
     ],
     long: 'A performance dashboard built to track and analyze team productivity by integrating directly with Trello boards via API. Each team has its own board, with data automatically pulled every 6 hours through a scheduled cron job. The system processes card and board activity, applies calculations for expected vs. actual hours, and accounts for holidays and bank holidays to provide accurate productivity insights. Data is visualized with multiple Chart.js graphs, including weekly and daily breakdowns at both team and individual levels. The UI, built with React, delivers an intuitive and responsive experience. This tool has become a core part of measuring workload, tracking performance trends, and improving transparency across the organization.',
-    image: '/images/trello.jpeg',
+    image: process.env.PUBLIC_URL + '/images/trello.jpeg',
     preview: [],
   },
   {
@@ -61,7 +61,7 @@ const portfolioItems = [
       'Dynamic tab creation: create tab components and configure the number of tabs at placement time.',
       'State synchronization: all layout changes are reflected in both layout and components states for consistency and reusability.',
     ],
-    image: '/images/builder.png',
+    image: process.env.PUBLIC_URL + '/images/builder.png',
     preview: [],
   },
   {
@@ -83,7 +83,7 @@ const portfolioItems = [
       'Automated reporting: scheduled jobs that email or store PDF/CSV reports for stakeholders.',
     ],
     long: 'A collection of visualisations and dashboards built with React and Nivo Charts. Processing-heavy work is handled on the backend to ensure the UI remains snappy even with large datasets. The product supports interactive exploration, exports, scheduled snapshots and a range of report templates (Sales, Marketing, Product, Operations). Dashboards are responsive and include features for sharing and downloading data for downstream analysis.',
-    image: '/images/reports.png',
+    image: process.env.PUBLIC_URL + '/images/reports.png',
     preview: [],
   },
   {
@@ -105,7 +105,7 @@ const portfolioItems = [
       'Centralized dashboard for reporting and monitoring campaign review progress',
     ],
     long: 'This feature solves fragmented communication and delays in PPC campaign approvals by centralizing draft management and feedback in the Customer Portal. Built with React, it provides a responsive, intuitive UI, real-time status tracking, version history, and notifications for internal teams and customers. Integrated Nivo Charts provide visual dashboards for tracking approvals and campaign progress, enabling faster turnarounds.',
-    image: '/images/ppc.png',
+    image: process.env.PUBLIC_URL + '/images/ppc.png',
     preview: [],
   },
 ];
@@ -130,7 +130,7 @@ const collaborationItems = [
       'Export & reporting: CSV / Excel exports of lead data and activity for analysis',
     ],
     long: 'This tool was developed to replace Monday.com for managing leads, eliminating external subscription costs and centralizing all customer and lead data. Inspired by GitHub ProjectsV2 and Monday.com, it allows sales teams to create projects with custom fields and workflows, configure multiple views (board, table, roadmap), and track lead progress efficiently. Comments and version history maintain full transparency, while the responsive UI and backend optimizations ensure fast, interactive experiences. The platform also supports exporting and reporting features to aid management and data-driven decision making.',
-    image: '/images/crm.png',
+    image: process.env.PUBLIC_URL + '/images/crm.png',
     preview: [],
   },
   {
@@ -150,7 +150,7 @@ const collaborationItems = [
       'Responsive frontend UI built with React and TypeScript.',
     ],
     long: 'The Customer Hub was designed to empower customers to manage requests and assets directly. Using email-based authentication, customers can log in without passwords. Assets uploaded by customers are stored in AWS S3. The backend, built with Node.js and Prisma, manages asset references, lifecycle, and integration with main system. A visual product pipeline allows customers to track their orders step by step. The system improves customer experience, streamlines internal workflows, and ensures secure and organized asset management.',
-    image: '/images/ch.png',
+    image: process.env.PUBLIC_URL + '/images/ch.png',
     preview: [],
   },
 ];
@@ -324,7 +324,7 @@ export default function App() {
       >
         <div className='w-full h-[60vh] md:h-screen'>
           <img
-            src='/images/back.png'
+            src={process.env.PUBLIC_URL + '/images/back.png'}
             alt='background'
             className='w-full h-full object-cover'
           />
@@ -391,7 +391,7 @@ export default function App() {
 
               <div className='flex justify-center '>
                 <img
-                  src='/images/port.png'
+                  src={process.env.PUBLIC_URL + '/images/port.png'}
                   alt='Marta'
                   className='rounded-lg max-w-sm'
                 />
@@ -498,7 +498,7 @@ export default function App() {
                     className='transform hover:scale-110 transition'
                   >
                     <img
-                      src='/images/gh.png'
+                      src={process.env.PUBLIC_URL + '/images/gh.png'}
                       alt='github'
                       className='h-12 w-12 object-contain'
                     />
@@ -513,7 +513,7 @@ export default function App() {
                     className='transform hover:scale-110 transition'
                   >
                     <img
-                      src='/images/in.png'
+                      src={process.env.PUBLIC_URL + '/images/in.png'}
                       alt='linkedin'
                       className='h-12 w-12 object-contain'
                     />
@@ -526,7 +526,7 @@ export default function App() {
                   className='transform hover:scale-110 transition flex-shrink-0'
                 >
                   <img
-                    src='/images/stats.png'
+                    src={process.env.PUBLIC_URL + '/images/stats.png'}
                     alt='GitHub stats'
                     className='h-12 w-12 object-contain'
                   />
@@ -568,15 +568,20 @@ export default function App() {
                     key={type}
                     className='bg-gray-900 rounded-lg p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition'
                     onClick={() =>
-                      setPreviewImg(`/images/${type}${activeYear}.png`)
+                      setPreviewImg(
+                        `process.env.PUBLIC_URL + /images/${type}${activeYear}.png`
+                      )
                     }
                   >
                     <h4 className='text-white font-medium mb-2'>
                       {type === 'con' ? 'Contributions' : 'Commits'}
                     </h4>
                     <img
-                      src={`/images/${type}${activeYear}.png`}
-                      alt={`/images/${type} ${activeYear}`}
+                      src={
+                        process.env.PUBLIC_URL +
+                        `/images/${type}${activeYear}.png`
+                      }
+                      alt={`${type} ${activeYear}`}
                       className='max-h-96 object-contain'
                     />
                     <p className='mt-2 text-gray-300 text-sm'>
